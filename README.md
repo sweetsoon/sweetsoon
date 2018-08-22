@@ -1,24 +1,5 @@
-# README
+# SWEET SOON~~
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 팀원 : 상희, 수현, 대현, 근식
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### 하루를 마치고 위로를 받고 싶거나 즐거운 마음을 나눌 수 있는 공간
