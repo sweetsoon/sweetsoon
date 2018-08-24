@@ -16,9 +16,9 @@ module Merit
       # score 10, :on => 'users#create' do |user|
       #   user.bio.present?
       # end
-      score 100, :on => 'users#create'
-      score 30, :on => 'chocolates#create'
-      score -10, :on => 'chocolates#show'
+      # score 100, :on => 'users#create'
+      # score 30, :on => 'chocolates#create'
+      # score -10, :on => 'chocolates#show'
       #
       # score 15, :on => 'reviews#create', :to => [:reviewer, :reviewed]
       #
