@@ -2,7 +2,7 @@ class ChocolatesController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!
   before_action :set_chocolate, only: [:show, :edit, :update, :destroy]
-  before_action :check_point, only: [:show]
+  # before_action :check_point, only: [:show]
 
   # GET /chocolates
   # GET /chocolates.json
