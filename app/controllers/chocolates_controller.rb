@@ -2,12 +2,13 @@ class ChocolatesController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!
   before_action :set_chocolate, only: [:show, :edit, :update, :destroy]
-  before_action :check_point, only: [:show]
+  # before_action :check_point, only: [:show]
 
   # GET /chocolates
   # GET /chocolates.json
   def index
     @chocolates = Chocolate.all
+    @image = ['C01.png','C01A.png','C02.png','C03A.png','C03B.png','C06.png','C08.png','C09.png','C09A.png','C10.png','C12.png','C14.png','C15.png','C16.png', ].shuffle
   end
 
   # GET /chocolates/1

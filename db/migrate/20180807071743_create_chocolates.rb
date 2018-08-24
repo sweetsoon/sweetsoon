@@ -3,6 +3,7 @@ class CreateChocolates < ActiveRecord::Migration[5.2]
     create_table :chocolates do |t|
       t.string :title
       t.text :content
+      
 
       t.timestamps
     end
