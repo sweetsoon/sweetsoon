@@ -8,6 +8,7 @@ class ChocolatesController < ApplicationController
   # GET /chocolates.json
   def index
     @chocolates = Chocolate.all
+    @image = ['C01.png','C01A.png','C02.png','C03A.png','C03B.png','C06.png','C08.png','C09.png','C09A.png','C10.png','C12.png','C14.png','C15.png','C16.png', ].shuffle
   end
 
   # GET /chocolates/1

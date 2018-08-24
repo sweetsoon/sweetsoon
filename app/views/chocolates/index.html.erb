@@ -1,34 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Chocolates</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @chocolates.each do |chocolate| %>
-      <tr>
-        <td><%= chocolate.title %></td>
-        <td><%= chocolate.content %></td>
-        <td><%= link_to 'Show', chocolate %></td>
-        <td><%= link_to 'Show modal', chocolate, remote: true %></td>
-        <td><%= link_to 'Edit', edit_chocolate_path(chocolate) %></td>
-        <td><%= link_to 'Destroy', chocolate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<h1 class="pick">당신의 초콜릿</h1>
+<div class="d-flex justify-content-center">
+<% @chocolates.each_with_index do |chocolate, index| %>
+  <div class="chocolate">
+    <%= link_to chocolate do%>
+      <%= image_tag "#{@image[index]}", class: 'img-fluid' %>
     <% end %>
-  </tbody>
-</table>
-
+  </div>
+<% end %>
+</div>
+    
 <br>
-
-<%= link_to 'New Chocolate', new_chocolate_path %>
-
 
 <div class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
