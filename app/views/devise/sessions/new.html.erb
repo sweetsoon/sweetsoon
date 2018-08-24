@@ -1,28 +1,49 @@
-<h1><%= t('.sign_in', default: 'Sign in') %></h1>
+<style>
+  .col-9{
+    margin-top: 200px;
+  }
+  .login{
+    font-family: 'Hankc';
+  }
+ 
+</style>
 
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form' }) do |f| %>
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :password %>
-    <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="form-check">
-      <%= f.label :remember_me, class: 'form-check-label' do %>
-        <%= f.check_box :remember_me, class: 'form-check-input' %>
-        <%= t('activerecord.attributes.user.remember_me', default: 'Remember me') %>
-      <% end %>
+<div class="login">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form' }) do |f| %>
+    <div class="form-group">
+      <%= image_tag 'hello_choco.png', class: 'img-fluid' %>
+      <br><br>
+      <blockquote>
+      <p>"Life is like a box of chocolates, you never know what you're gonna get."</p>
+      <footer> <cite title="Source Title">Forrest gump, 1994 </cite></footer>
+      </blockquote>
+    <br>
     </div>
+</div>
+    <div>
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
+    </div>
+    <% if devise_mapping.rememberable? %>
+        <div class="form-check">
+          <center><%= f.label :remember_me, class: 'form-check-label' do %>
+          <%= f.check_box :remember_me, class: 'form-check-input' %>
+          <%= t('activerecord.attributes.user.remember_me', default: 'Remember me') %>
+          </center>
+          <br><br>
+        <% end %>
+        </div>
+    <% end %>
+    <div class="form-group">
+      <center><%= f.submit  t('.sign_in', default: 'Sign in'), class: 'btn btn-default btn-sm'%></center>
+      </div>
   <% end %>
+  <br>
+  <under><%= render 'devise/shared/links' %></under>
+</div>
 
-  <div class="form-group">
-    <%= f.submit  t('.sign_in', default: 'Sign in'), class: 'btn btn-primary' %>
-  </div>
-<% end %>
 
-<%= render 'devise/shared/links' %>
