@@ -1,8 +1,48 @@
+<link rel="stylesheet" href="/css/input_color.css"/>
 
-<form>
-  <div class="form-group">
-    <label for="formControlRange">Example Range input</label><br>
-    <input type="range" class="form-control-range" id="formControlRange">
-  </div>
+ <% if user_signed_in? %>
+         
+          <h4>당신의 초코 : <%= current_user.points %></h4>
+           
+        <% else %>
+        <% end %>
+
+<div style="margin-top: 150px;"></div>
+<p>오늘 당신의 기분은 어떤가요?</p>
+
+
+
+<div style="margin-top: 60px;"></div>
+
+<div id="silly">50</div><input type="range" style="width: 100%;" />
+    <script>
+       var rng = document.querySelector("input");
+
+ var listener = function() {
+  window.requestAnimationFrame(function() {
+    document.getElementById('silly').innerHTML = rng.value;
+  });
+};
+
+rng.addEventListener("mousedown", function() {
+  listener();
+  rng.addEventListener("mousemove", listener);
+});
+rng.addEventListener("mouseup", function() {
+  rng.removeEventListener("mousemove", listener);
+});
+
+// include the following line to maintain accessibility
+// by allowing the listener to also be fired for
+// appropriate keyboard events
+rng.addEventListener("keydown", listener);
+
+   
+    </script>
+
+
+<div style="margin-top: 50px;"></div>
+
+    <button type="submit"  class="btn-light">Give me Chocolate!</button>
 </form>
 
