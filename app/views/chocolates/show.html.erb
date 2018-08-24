@@ -1,14 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @chocolate.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @chocolate.content %>
-</p>
+<div class="content">
+  <h1>
+    <%= @chocolate.title %>
+  </h1><br>
+  <p>
+    <%= @chocolate.content %>
+  </p>
+</div>
 
 <%= link_to 'Edit', edit_chocolate_path(@chocolate) %> |
 <%= link_to 'Back', chocolates_path %>
